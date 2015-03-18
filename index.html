@@ -5,7 +5,7 @@
 		var conn = document.getElementById('textconn');
 		conn.innerHTML = "CONNECTING";
 		// open a connection to the serial server:
-		var socket = io.connect('http://2001:2f8:1c:a540:cd8e:cd36:4c1b:598a:8080');
+		var socket = io.connect('http://133.13.49.225:8080');
 		//conn.innerHTML = "CONNECTED";
 		 // when you get a serialdata event, do this:
 		socket.on('serialEvent', function (data) {
