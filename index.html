@@ -6,7 +6,7 @@
 		conn.innerHTML = "CONNECTING";
 		// open a connection to the serial server:
 		var socket = io.connect('http://172.20.10.2:8080');
-		conn.innerHTML = "CONNECTED";
+		//conn.innerHTML = "CONNECTED";
 		 // when you get a serialdata event, do this:
 		socket.on('serialEvent', function (data) {
 			// you're going to move the div in the HTML:
