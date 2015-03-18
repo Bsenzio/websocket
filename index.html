@@ -2,9 +2,11 @@
 <html>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
+		var conn = document.getElementById('textconn');
+		conn.innerHTML = "CONNECTING";
 		// open a connection to the serial server:
 		var socket = io.connect('http://172.20.10.2:8080');
-
+		conn.innerHTML = "CONNECTED";
 		 // when you get a serialdata event, do this:
 		socket.on('serialEvent', function (data) {
 			// you're going to move the div in the HTML:
@@ -13,12 +15,13 @@
 			element.style.left = data.x+ "px";							// set the left edge of the text
 			element.style.top = data.y+ "px";							// set the top edge of the text
 			element.style.fontSize = data.z + "%";						// set the size of the text
-			element.innerHTML = "PASE";//data.x + "," + data.y + ","+ data.z;	// set the text itself	
+			element.innerHTML = data.x + "," + data.y + ","+ data.z;	// set the text itself	
 		});
 	</script>
 
 	</head>
 	<body>
-	<div id="textDisplay">Hello</p>
+	<div id="textconn"></p>
+	<div id="textDisplay">HELLO</p>
 	</body>
 </html>
